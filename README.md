@@ -35,7 +35,7 @@ Once you have your Azure Subscription, create an [Azure Cognitive Services resou
 The python code here has been tested with version 3.9.1 in Windows.
 
 Before running any of the python code, from command line, set the following environment variables with the values of keys etc. you obtained from above.
-
+```
 set STOCK_NEWS_KEY=<YOUR MARKETSTACK API KEY>
 set TWITTER_CONSUMER_KEY=<YOUR TWITTER CONSUMER KEY>
 set TWITTER_CONSUMER_SECRET=<YOUR TWITTER CONSUMER SECRET>
@@ -43,6 +43,7 @@ set TWITTER_ACCESS_TOKEN_KEY=<YOUR TWITTER ACCESS TOKEN>
 set TWITTER_ACCESS_TOKEN_SECRET=<YOUR TWITTER ACCESS TOKEN SECRET>
 set COGNITIVE_SERVICE_KEY=<YOUR AZURE COGNITIVE SERVICE KEY>
 set COGNITIVE_SERVICE_ENDPOINT=https://<YOUR AZURE COGNITIVE SERVICE NAME>.cognitiveservices.azure.com/
+```
 
 In order to get end of day stock market information of a ticker symbol and also to get twitter feed on a search string and then feed it to Azure Text Analytics APIs to extract key phrases, named entities, sentiment etc.. run this below -
 
