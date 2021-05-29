@@ -22,7 +22,7 @@ Install the [stocknews python package][stocknews] in your python environment.
 
 #### Setup an Azure Cognitive Service Instance ####
 
-Create an [Azure subscription] if do not have one already. You may want to ask the Azure administrator in your organization first.
+Create an [Azure subscription][azure] if do not have one already. You may want to ask the Azure administrator in your organization first.
 
 Alternatively, you can create your own [free Azure subscription][azure_free] to test out.
 
@@ -50,6 +50,29 @@ In order to get end of day stock market information of a ticker symbol and also 
 	# Run text analytics on twitter feed
 	> python ComputeCompanyScore.py -s TSLA -q "electric+car+chip" 
 
+The output 
+```
+Date: 2021-05-28T00:00:00+0000, Name: Tesla Inc [TSLA], Open: 628.500000, High: 635.590000, Low: 622.380000, Closing: 625.220000, Volume: 22640034.000000
+
+Search Twitter messages for electric+car+chip since 2020-05-13
+        Tweet -> RT @NetDec: Find out more about the latest AI-driven Navy Submarine powered by an Nvidia chip and electric car battery. Is this the beginni…
+        Tweet -> Find out more about the latest AI-driven Navy Submarine powered by an Nvidia chip and electric car battery. Is this… https://t.co/9WxSirayfb
+        Tweet -> Chip shortage will hit electric car production https://t.co/ujU0NBAXFv
+        Tweet -> @jimcramer Nah. Chip shortage is going to crush their delivery for the next year. Their share price is going to get… https://t.co/P4VjtvtjLB
+        Tweet -> @Jchaps03 @The_Left_Prince @ElonLovesUs @Lunnaris01 @SenSanders Yeah Elon having control would be such a bad thing!… https://t.co/66aOnOGXAE
+
+Key Phrases:
+         ['Nvidia chip', 'latest AI-driven Navy Submarine', 'electric car battery', 'RT', 'NetDec', 'beginni']
+
+Named Entities:
+        Text:    Nvidia
+        Category:        Organization   SubCategory:     None   Confidence Score:        0.54
+
+Document Sentiment: neutral
+
+Overall scores: positive=0.06; neutral=0.90; negative=0.04
+
+```
 
 [azure_cog]: <https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows>
 [azure_free]: <https://azure.microsoft.com/en-us/free/>
