@@ -30,6 +30,12 @@ Once you have your Azure Subscription, create an [Azure Cognitive Services resou
 
 ![Azure Cognitive Service Page in Azure Portal](/images/azure_cog_properties.jpg)
 
+#### Install Azure AI Text Analytics Python Packages ####
+
+Install the [Azure AI Text Analytics python package][azure_text_analytics] in your python environment.
+
+        > pip install azure-ai-textanalytics==5.1.0b7
+
 ## Run ##
 
 The python code here has been tested with version 3.9.1 in Windows.
@@ -73,7 +79,7 @@ Document Sentiment: neutral
 Overall scores: positive=0.06; neutral=0.90; negative=0.04
 
 ```
-
+[azure_text_analytics]: <https://docs.microsoft.com/en-us/azure/cognitive-services/text-analytics/quickstarts/client-libraries-rest-api?tabs=version-3-1&pivots=programming-language-python>
 [azure_cog]: <https://docs.microsoft.com/en-us/azure/cognitive-services/cognitive-services-apis-create-account?tabs=multiservice%2Cwindows>
 [azure_free]: <https://azure.microsoft.com/en-us/free/>
 [azure]: <https://docs.microsoft.com/en-us/azure/cost-management-billing/manage/create-subscription#create-a-subscription-in-the-azure-portal>
