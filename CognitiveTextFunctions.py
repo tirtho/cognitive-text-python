@@ -45,3 +45,33 @@ def get_key_phrases(client, documents):
     except Exception as err:
         print("Encountered exception. {}".format(err))
         exit
+
+def displayTextAnalytics(documents):
+    client = authenticate_client()
+    key_phrases = get_key_phrases(client, documents)
+    print("Key Phrases:")
+    phrase_list = []
+    for phrase in key_phrases:
+        phrase_list.append(phrase)
+    print("\t", phrase_list)
+
+    result = get_named_entities(client, documents)
+    print("Named Entities:")
+    if (not result.entities):
+        print("\tNot found")
+    else:
+        for entity in result.entities:
+            if entity.category == 'Organization':
+                print("\tText: \t", entity.text, "\n\tCategory: \t", entity.category, "\tSubCategory: \t", entity.subcategory,
+                    "\tConfidence Score: \t", round(entity.confidence_score, 2)) #"\tLength: \t", entity.length, "\tOffset: \t", entity.offset)
+
+    sentiments = get_sentiments(client, documents)
+    if (not sentiments):  
+        print("Sentiments not found")
+    else:
+        print("Document Sentiment: {}".format(sentiments.sentiment))
+        print("Overall scores: positive={0:.2f}; neutral={1:.2f}; negative={2:.2f} \n".format(
+            sentiments.confidence_scores.positive,
+            sentiments.confidence_scores.neutral,
+            sentiments.confidence_scores.negative,
+        ))
